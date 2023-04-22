@@ -23,21 +23,25 @@ function App() {
         name='name'
         placeholder='Nombre'
         value={form.name}
+        onChange={handleChange}
       />
       <input
         name='lastName'
         placeholder='Apellido'
         value={form.lastName}
+        onChange={handleChange}
       />
       <input
         name='phone'
         placeholder='Teléfono'
         value={form.phone}
+        onChange={handleChange}
       />
       <input
         name='email'
         placeholder='Correo'
         value={form.email}
+        onChange={handleChange}
       />
     </form>
   );
