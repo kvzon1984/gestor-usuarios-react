@@ -1,49 +1,35 @@
-import { useState } from "react";
+import {useState} from 'react';
+import Card from "./components/Card"
+import Container from "./components/Container"
+import UserFrom from "./components/UserForm"
+
 
 function App() {
-  const [ form, setform ] = useState({
-    name: '',
-    lastName: '',
-    phone: '',
-    email: ''
-  })
+  const [usuarios, setUsuarios] = useState([])
 
-  const handleChange = (e) => {
-    setform({
-      ...form,
-      [e.target.name]: e.target.value
-    })
+  const submit = (usuario) => {
+    setUsuarios([
+      ...usuarios,
+      usuario
+    ])
   }
 
-
-
   return (
-    <form>
-      <input
-        name='name'
-        placeholder='Nombre'
-        value={form.name}
-        onChange={handleChange}
-      />
-      <input
-        name='lastName'
-        placeholder='Apellido'
-        value={form.lastName}
-        onChange={handleChange}
-      />
-      <input
-        name='phone'
-        placeholder='Teléfono'
-        value={form.phone}
-        onChange={handleChange}
-      />
-      <input
-        name='email'
-        placeholder='Correo'
-        value={form.email}
-        onChange={handleChange}
-      />
-    </form>
+    <div style={{marginTop: 50}}>
+      <Container>
+        <Card>
+          <div style={{ padding: 20}}>
+            <UserFrom submit={submit}/>
+          </div>
+        </Card>
+        <Card>
+          <ul>
+            {usuarios.map(u => <li key={u.email}>{`${u.name} ${u.lastName} ${u.phone} ${u.email}`}</li>)}
+          </ul>
+        </Card>
+      </Container>
+    </div>
+
   );
 }
 
