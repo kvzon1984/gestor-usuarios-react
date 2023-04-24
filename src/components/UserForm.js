@@ -1,9 +1,9 @@
 import Input from "./Input";
 import Button from "./Button"
-import useForm from "../hooks/useForm";
+import useFormulario from "../hooks/useFormulario";
 
 const UserFrom = ({submit}) => {
-    const [form, handleChange, reset] = useForm({ 
+    const [form, handleChange, reset] = useFormulario({ 
         name: '',
         lastName: '',
         phone: '',
