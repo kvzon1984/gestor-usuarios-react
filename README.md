@@ -1,3 +1,5 @@
+# De que trata
+Esta aplicacion conmsiste en poder ingresar datos de usuarios y poder listarlos en una tabla
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
